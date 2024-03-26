@@ -139,3 +139,22 @@ SELECT Invoice.BillingCity, COUNT(*)
 FROM Invoice, InvoiceLine
 GROUP BY Invoice.BillingCity, Invoice.InvoiceId
 HAVING Invoice.InvoiceId = InvoiceLine.InvoiceId;
+
+/*
+Semantic errors that ca cause redundant parts in the SQL query execution plan:
+
+Joins:
+Unnecessary join operations in the query (joining tables when they are not needed).
+
+Subqueries:
+Using subqueries that do not contribute to the final result or are unnecessary.
+
+Conditions:
+Including conditions in the WHERE clause that are redundant or do not affect the query result.
+
+Grouping:
+Grouping by attributes that are not necessary for the query result, for example by ID.
+
+Aggregations:
+Unnecessary aggregations.
+*/
